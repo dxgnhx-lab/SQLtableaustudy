@@ -83,6 +83,8 @@ minsu_week1.ipynb
 - 본인 이름으로 된 파일만 수정합니다.
     
 - push가 거절될 경우 `pull` 후 다시 `push`합니다.
+
+- 절대 main 브랜치에 병합하지 않기!!!!!!!!!!!
     
 
 git pull origin study  
