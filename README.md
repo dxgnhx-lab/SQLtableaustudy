@@ -51,6 +51,7 @@ https://neon.com/postgresql/tutorial
 		- SQL의 4가지 종류(DDL, DML, DCL, TCL)
 - 고정적으로 가능한 시간대? 최대한 피고싶은 요일 및 시간대? - 디스코드 sesh 봇
 ### 참고사항
+- how_to_submit.md를 참고해서 제출
 - ToDo 봇을 활용한 개인별 체크리스트(혹은 Todoist, Apollo 등)
 	- 혹은 포럼 채널 개설
 - 디스코드랑 vscode랑 연결할 수 있는 방법이 있나?
