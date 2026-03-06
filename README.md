@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-"# SQLtableaustudy" 
-=======
 # SQLtableaustudy
 제출 방법
 
