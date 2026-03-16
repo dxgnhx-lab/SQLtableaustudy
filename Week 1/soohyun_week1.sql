@@ -32,8 +32,8 @@ actor 테이블에서 성(last_name)에 'LI'가 포함되면서, 이름(first_na
 */
 -- TODO: 문제 4 SQL 작성
 select * from actor
-where lower(last_name) like '%li%'
-	and first_name like 'C%'
+where last_name ilike '%li%'
+	and first_name ilike 'c%'
 order by last_name asc
 -- 결과 1행
 
@@ -54,7 +54,7 @@ film 테이블에서 영화 설명(description)에 'Documentary'라는 단어가
 */
 -- TODO: 문제 6 SQL 작성
 select title, rental_duration from film
-where description like '%Documentary%'
+where description ilike '%documentary%'
 order by rental_duration asc
 -- 결과 101행
 
