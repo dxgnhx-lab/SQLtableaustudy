@@ -1,21 +1,43 @@
 /*동하
-2005년 5월 한 달 동안, 날짜별로 발생하는 매출액과 
+2007년 2월 한 달 동안, 날짜별로 발생하는 매출액과 
 해당 날짜까지의 누적 매출액을 구하세요.
 */
+SELECT 
+    DATE(p.payment_date) AS payment_date,
+    SUM(p.amount) AS daily_sales
+FROM payment p
+WHERE p.payment_date >= '2007-01-01'
+AND p.payment_date < '2010-11-01'
+GROUP BY DATE(p.payment_date)
+ORDER BY payment_date;
 
 /*동하
  고객별로 첫 번째 대여와 두 번째 대여 사이의  시간 간격(날짜 차이)을 
  구하세요. (모든 고객을 구할 필요 없이, 2번 이상 빌린 고객만 대상)
 */
-
-
+with t as (
+    SELECT *
+FROM (
+    SELECT 
+        customer_id,
+        rental_date,
+        ROW_NUMBER() OVER (PARTITION BY customer_id ORDER BY rental_date) AS rn
+    FROM rental
+)
+where rn <=2 )
+SELECT 
+    t1.customer_id,
+    DATE(t2.rental_date) - DATE(t1.rental_date) AS diff_days
+FROM t t1
+JOIN t t2 
+    ON t1.customer_id = t2.customer_id
+WHERE t1.rn = 1 
+  AND t2.rn = 2;
 /*동하
 각 영화 카테고리별로 "전체 재고 수" 대비 "현재 대여 중인 수"의 비율을 
 구하세요. 어떤 장르가 가장 활발하게 회전되고 있나요?
 */
-/*동하
 
-*/
 
 -- 민영
 /* 
